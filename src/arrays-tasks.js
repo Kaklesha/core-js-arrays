@@ -399,11 +399,13 @@ function createChunks(arr, chunkSize) {
  *    generateOdds(1) => [ 1 ]
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
+ *                         0  2  4  6  8
+ *                         0  1  2  3  4
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  const arr = new Array(len).fill(0);
+  return arr.map((_, index) => 1 + index * 2);
 }
-
 /**
  * Returns an element from the multidimensional array by the specified indices.
  *
